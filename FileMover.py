@@ -28,7 +28,8 @@ print(validatePath(destinationPath)+":  "+destinationPath)
 filesInFolder = listdir(sourcePath)
 print(filesInFolder)
 
-for i in filesInFolder:
-    print(filesInFolder[i])
-    #currentFile = sourcePath + "\\" + files[i]
-    #print(currentFile)
+print(len(filesInFolder))
+i = 0
+while i < len(filesInFolder):
+    print(filesInFolder(i))
+    i = i+1
