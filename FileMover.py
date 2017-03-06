@@ -2,34 +2,32 @@ import shutil
 import os
 from os import listdir
 
-sourcePath=""
-destinationPath=""
+sourcePath = ""
+destinationPath = ""
+
 
 def validatePath(path):
-    if(sourcePath == destinationPath):
+    if (sourcePath == destinationPath):
+        print("Source and destination are the same. Exiting")
         exit()
     else:
-        if(os.path.exists(path)):
-            return("path is valid")
+        if (os.path.exists(path)):
+            return ("Valid path:  ")
         else:
-            return("invalid path")
+            return ("invalid path. Exiting")
+            exit()
 
-print("Welcome to File Automation Recursive Copy Utility or FARCU for short.")
 
-
-sourcePath = input("Enter the path of the source folder: ")
+sourcePath = raw_input("Enter the path of the source folder: ")
 validatePath(sourcePath)
-print(validatePath(sourcePath)+":  "+sourcePath)
+print(validatePath(sourcePath) + sourcePath)
 
-destinationPath = input("Enter the path of the destination folder: ")
+destinationPath = raw_input("Enter the path of the destination folder: ")
 validatePath(destinationPath)
-print(validatePath(destinationPath)+":  "+destinationPath)
+print(validatePath(destinationPath) + destinationPath)
 
 filesInFolder = listdir(sourcePath)
-print(filesInFolder)
 
-print(len(filesInFolder))
-i = 0
-while i < len(filesInFolder):
-    print(filesInFolder(i))
-    i = i+1
+for i in filesInFolder:
+    print(sourcePath + "\\" + i)
+    shutil.move((sourcePath + "\\" + i), (destinationPath + "\\" + i))
