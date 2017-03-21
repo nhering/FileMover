@@ -1,13 +1,13 @@
 import shutil
 import os
 from os import listdir
-from time import ctime
+import time
 
 sourcePath = ""
 destinationPath = ""
 
 #Currently set to 24 hours ago. This can be used later to accept a user entered time for validating if a file should be moved or not.
-moveTime = time() - 86400
+moveTime = time.time() - 86400
 
 #checks the source and destination paths given to ensure they are valid and not equal to each other
 def validatePath(path):
